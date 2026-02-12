@@ -1,130 +1,236 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Membership Updating Form</title>
-    <link rel="stylesheet" href="./style.css">
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iwahori MPC Membership Update Form</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
 <div class="container">
   <form id="memberForm">
-    <h2>Iwahori MPC Membership Update Form</h2>
+    <h2>Membership Update Form</h2>
 
-    <!-- Personal Info -->
+    <!-- PERSONAL INFORMATION -->
     <div class="card">
       <h3>Personal Information</h3>
-      <div class="input-group"><label>First Name</label><input type="text" name="firstName" required></div>
-      <div class="input-group"><label>Middle Name</label><input type="text" name="middleName"></div>
-      <div class="input-group"><label>Last Name</label><input type="text" name="lastName" required></div>
-      <div class="input-group"><label>Civil Status</label>
-        <select name="civilStatus" required>
-          <option value="">Select</option><option>Single</option><option>Married</option><option>Widowed</option><option>Separated</option>
-        </select>
+
+      <div class="grid">
+        <div class="input-group">
+          <label>First Name</label>
+          <input type="text" name="firstName" required>
+        </div>
+
+        <div class="input-group">
+          <label>Middle Name</label>
+          <input type="text" name="middleName">
+        </div>
+
+        <div class="input-group">
+          <label>Last Name</label>
+          <input type="text" name="lastName" required>
+        </div>
+
+        <div class="input-group">
+          <label>Civil Status</label>
+          <select name="civilStatus" required>
+            <option value="">Select</option>
+            <option>Single</option>
+            <option>Married</option>
+            <option>Widowed</option>
+            <option>Separated</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label>Gender</label>
+          <select name="gender" required>
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label>Birthdate</label>
+          <input type="date" name="birthdate" required>
+        </div>
       </div>
-      <div class="input-group"><label>Gender</label>
-        <select name="gender" required>
-          <option value="">Select</option><option>Male</option><option>Female</option><option>Other</option>
-        </select>
-      </div>
-      <div class="input-group"><label>Birthdate</label><input type="date" name="birthdate" required></div>
     </div>
 
-    <!-- Contact Info -->
+    <!-- ADDRESS & CONTACT -->
     <div class="card">
-      <h3>Contact Information</h3>
-      <div class="input-group"><label>Complete Address</label><textarea name="address" rows="2" required></textarea></div>
-      <div class="input-group"><label>Barangay</label><input type="text" name="barangay" required></div>
-      <div class="input-group"><label>Municipality</label><input type="text" name="municipality" required></div>
-      <div class="input-group"><label>Province</label><input type="text" name="province" required></div>
-      <div class="input-group"><label>Mobile Number</label><input type="tel" name="mobileNumber" required></div>
-      <div class="input-group"><label>Email</label><input type="email" name="email"></div>
-      <div class="input-group"><label>Facebook Link</label><input type="url" name="facebook"></div>
+      <h3>Address & Contact</h3>
+
+      <div class="grid">
+        <div class="input-group full">
+          <label>Complete Address</label>
+          <textarea name="completeAddress" required></textarea>
+        </div>
+
+        <div class="input-group">
+          <label>Barangay</label>
+          <input type="text" name="barangay" required>
+        </div>
+
+        <div class="input-group">
+          <label>Municipality</label>
+          <input type="text" name="municipality" required>
+        </div>
+
+        <div class="input-group">
+          <label>Province</label>
+          <input type="text" name="province" required>
+        </div>
+
+        <div class="input-group">
+          <label>Mobile Number</label>
+          <input type="tel" name="mobileNumber" required>
+        </div>
+
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" name="email">
+        </div>
+
+        <div class="input-group full">
+          <label>Facebook Link</label>
+          <input type="url" name="facebookLink">
+        </div>
+      </div>
     </div>
 
-    <!-- Housing Info -->
+    <!-- HOUSING -->
     <div class="card">
-      <h3>Housing / Ownership</h3>
-      <div class="input-group"><label>Type of Ownership</label>
+      <h3>Housing</h3>
+
+      <div class="input-group">
+        <label>Type of Ownership</label>
         <select name="typeOwnership" required>
           <option value="">Select</option>
-          <option>Owned</option><option>Living with relatives</option><option>Mortgage</option><option>Renter</option><option>Living with parents</option>
+          <option>Owned</option>
+          <option>Living with relatives</option>
+          <option>Mortgage</option>
+          <option>Renter</option>
+          <option>Living with parents</option>
         </select>
       </div>
     </div>
 
-    <!-- Employment & Income -->
-    <div class="card">
-      <h3>Employment & Income</h3>
-      <div class="input-group"><label>Source of Income</label>
-        <select name="sourceOfIncome" required>
-          <option value="">Select</option>
-          <option>SALARY</option><option>REMITTANCE</option><option>ALLOWANCES</option><option>BUSINESS</option>
-          <option>NET INCOME</option><option>PENSIONER</option><option>INVESTMENT</option><option>RETIREE</option>
-        </select>
-      </div>
-      <div class="input-group"><label>Employment Type</label>
-        <select name="employmentType" required>
-          <option value="">Select</option>
-          <option>Employed</option><option>Unemployed</option><option>Self-Employed</option>
-        </select>
-      </div>
-      <div class="input-group"><label>Employment Status</label>
-        <select name="employmentStatus">
-          <option value="">Select</option>
-          <option>Regular</option><option>Probationary</option><option>Casual</option><option>Contractual</option>
-        </select>
-      </div>
-      <div class="input-group"><label>Monthly Income</label>
-        <select name="monthlyIncome" required>
-          <option value="">Select</option>
-          <option>BELOW 10,000</option><option>10,001-15,000</option><option>15,001-20,000</option>
-          <option>20,001-30,000</option><option>30,001-50,000</option><option>50,001-100,000</option><option>100,000 up</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Education & Religion -->
+    <!-- EDUCATION & RELIGION -->
     <div class="card">
       <h3>Education & Religion</h3>
-      <div class="input-group"><label>Education</label>
-        <select name="education"><option value="">Select</option><option>Elementary</option><option>Highschool</option><option>K to 12</option><option>College</option></select>
+
+      <div class="grid">
+        <div class="input-group">
+          <label>Education Level</label>
+          <select name="education">
+            <option value="">Select</option>
+            <option>Elementary</option>
+            <option>Highschool</option>
+            <option>K to 12</option>
+            <option>College</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label>Religion</label>
+          <input type="text" name="religion">
+        </div>
+
+        <div class="input-group">
+          <label>PWD</label>
+          <select name="pwd">
+            <option value="">Select</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
       </div>
-      <div class="input-group"><label>Religion</label><input type="text" name="religion"></div>
-      <div class="input-group"><label>PWD</label>
-        <select name="pwd"><option value="">Select</option><option>Yes</option><option>No</option></select>
+    </div>
+
+    <!-- EMPLOYMENT -->
+    <div class="card">
+      <h3>Employment & Income</h3>
+
+      <div class="grid">
+        <div class="input-group">
+          <label>Source of Income</label>
+          <select name="sourceOfIncome">
+            <option value="">Select</option>
+            <option>SALARY</option>
+            <option>REMITTANCE</option>
+            <option>ALLOWANCES</option>
+            <option>BUSINESS</option>
+            <option>NET INCOME</option>
+            <option>PENSIONER</option>
+            <option>INVESTMENT</option>
+            <option>RETIREE</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label>Employment Type</label>
+          <select name="employmentType">
+            <option value="">Select</option>
+            <option>Employed</option>
+            <option>Unemployed</option>
+            <option>Self-Employed</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label>Nature of Work</label>
+          <select name="natureOfWork">
+            <option value="">Select</option>
+            <option>AGRICULTURE/FARMING</option>
+            <option>REAL ESTATE</option>
+            <option>BPO</option>
+            <option>CONSTRUCTION</option>
+            <option>EDUCATION</option>
+            <option>MEDICAL/HEALTH SERVICES</option>
+            <option>TRANSPORTATION</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label>Employment Status</label>
+          <select name="employmentStatus">
+            <option value="">Select</option>
+            <option>REGULAR</option>
+            <option>PROBATIONARY</option>
+            <option>Casual</option>
+            <option>Contractual</option>
+            <option>Project-Based</option>
+            <option>Part-Time</option>
+            <option>Job Order (JO)</option>
+            <option>Contract of Service (COS)</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label>Company Name</label>
+          <input type="text" name="companyName">
+        </div>
+
+        <div class="input-group">
+          <label>Monthly Income</label>
+          <select name="monthlyIncome">
+            <option value="">Select</option>
+            <option>BELOW 10,000</option>
+            <option>10,001-15,000</option>
+            <option>15,001-20,000</option>
+            <option>20,001-30,000</option>
+            <option>30,001-50,000</option>
+            <option>50,001-100,000</option>
+            <option>100,000 up</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label>TIN</label>
+          <input type="text" name="tin">
+        </div>
+
+        <div class="input-group full">
+          <label>Other Business / Source of Income</label>
+          <input type="text" name="otherBusiness">
+        </div>
       </div>
     </div>
 
     <button type="submit">Update Member</button>
   </form>
 </div>
-
-<div id="thankYouModal" class="modal">
-  <div class="modal-content">
-    <span id="closeModal" class="close">&times;</span>
-    <p>Thank you for updating your membership! We truly appreciate it. Kindly wait for our email to confirm successful updates. We will verify all fields submitted.</p>
-  </div>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
-    <script  src="./script.js"></script>
-
-  </body>
-  
-</html>
