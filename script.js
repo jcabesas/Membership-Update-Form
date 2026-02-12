@@ -1,34 +1,26 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbz4Sg9TEBbJiqwEu_Nj5fcHtLlp9pIwn-ytOMo81FCG9j7RbG9AdAmF56pP3gCSlGbwzA/exec';
-const form = document.getElementById('memberForm');
-const modal = document.getElementById('thankYouModal');
-const closeModal = document.getElementById('closeModal');
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyLnjJO3xWJaaaUBQZiZIWEEIp1Prq_kGk_McVJY0Y8SkEZk928_fdqeOLdbOba_irc_g/exec';
 
-form.addEventListener('submit', function(e) {
+document.getElementById("memberForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const formData = new FormData(form);
+  const formData = new FormData(this);
   const data = Object.fromEntries(formData.entries());
 
   fetch(scriptURL, {
-    method: 'POST',
+    method: "POST",
     body: JSON.stringify(data)
   })
   .then(res => res.json())
-  .then(data => {
-    if (data.result === "success") {
-      modal.style.display = "block";
-      form.reset();
+  .then(response => {
+    if (response.result === "success") {
+      alert("Membership updated successfully!");
+      this.reset();
     } else {
-      alert("Submission failed.");
+      alert("Error submitting form.");
     }
   })
   .catch(error => {
-    console.error("Error!", error.message);
-    alert("Error submitting form.");
+    console.error(error);
+    alert("Submission failed.");
   });
 });
-
-closeModal.onclick = () => modal.style.display = "none";
-window.onclick = (event) => {
-  if (event.target == modal) modal.style.display = "none";
-};
